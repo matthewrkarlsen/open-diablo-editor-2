@@ -1,0 +1,59 @@
+<!--
+/*
+ * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
+ *
+ * See README.txt for full contributor list.
+ *
+ * This code is tri-licensed, under the CC0, MIT and Apache 2.0 licenses (i.e. pick one of the three licenses).
+ *
+ * Careful attribution is strongly preferred, though not required under CC0.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open Diablo Editor</title>
+    <meta charset="UTF-8">
+    <script src="scripts/vue.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style/ode.css">
+</head>
+<body>
+<h1>Open Diablo Editor</h1>
+<p><a href="http://localhost:4666/">Back</a></p>
+<div id="scope">
+    <select class="selector" v-model="characters.characterSelected">
+        <option v-for="c in characters.characterList" :value="c">
+            {{ c.className }}
+        </option>
+    </select>
+    <form>
+        <p><label>Class name</label><input type="text" :value="characters.characterSelected.className" readonly></p>
+        <p><label>Init strength</label><input type="number" v-model="characters.characterSelected.initStrength" @input="characters.characterSelected.initStrength = $event.target.value"></p>
+        <p><label>Max strength</label><input type="number" v-model="characters.characterSelected.maxStrength"></p>
+        <p><label>Init magic</label><input type="number" v-model="characters.characterSelected.initMagic"></p>
+        <p><label>Max magic</label><input type="number" v-model="characters.characterSelected.maxMagic"></p>
+        <p><label>Init dexterity</label><input type="number" v-model="characters.characterSelected.initDexterity"></p>
+        <p><label>Max dexterity</label><input type="number" v-model="characters.characterSelected.maxDexterity"></p>
+        <p><label>Init vitality</label><input type="number" v-model="characters.characterSelected.initVitality"></p>
+        <p><label>Max vitality</label><input type="number" v-model="characters.characterSelected.maxVitality"></p>
+        <p><label>Blocking bonus</label><input type="number" v-model="characters.characterSelected.blockingBonus"></p>
+        <p><label>Dungeon idle frameset</label><input type="number" v-model="characters.characterSelected.dungeonIdleFrameset"></p>
+        <p><label>Attacking frameset</label><input type="number" v-model="characters.characterSelected.attackingFrameset"></p>
+        <p><label>Dungeon walk frameset</label><input type="number" v-model="characters.characterSelected.dungeonWalkFrameset"></p>
+        <p><label>Block speed (1/20 secs)</label><input type="number" v-model="characters.characterSelected.blockSpeed"></p>
+        <p><label>Death frameset</label><input type="number" v-model="characters.characterSelected.deathFrameset"></p>
+        <p><label>Casting frameset</label><input type="number" v-model="characters.characterSelected.castingFrameset"></p>
+        <p><label>Hit recovery speed</label><input type="number" v-model="characters.characterSelected.hitRecoverySpeed"></p>
+        <p><label>Town idle frameset</label><input type="number" v-model="characters.characterSelected.townIdleFrameset"></p>
+        <p><label>Town walk frameset</label><input type="number" v-model="characters.characterSelected.townWalkFrameset"></p>
+        <p><label>1H attack speed</label><input type="number" v-model="characters.characterSelected.oneHandedAttackSpeed"></p>
+        <p><label>Casting speed (1/20 secs)</label><input type="number" v-model="characters.characterSelected.castingSpeed"></p>
+    </form>
+</div>
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="button" value="Save!" id="save-button">
+</form>
+<script src="scripts/load.js" type="text/javascript"></script>
+<script src="scripts/save.js" type="text/javascript"></script>
+</body>
+</html>

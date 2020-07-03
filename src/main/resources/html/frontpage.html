@@ -1,0 +1,46 @@
+<!--
+/*
+ * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
+ *
+ * See README.txt for full contributor list.
+ *
+ * This code is tri-licensed, under the CC0, MIT and Apache 2.0 licenses (i.e. pick one of the three licenses).
+ *
+ * Careful attribution is strongly preferred, though not required under CC0.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Open Diablo Editor</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style/ode.css">
+</head>
+<body>
+  <h1>Open Diablo Editor</h1>
+  <noscript>JavaScript is currently disabled for localhost. Please enable it.</noscript>
+  <div class="unloaded">
+    <form action="" method="POST" enctype="multipart/form-data">
+      <label>Pick the exe file to load (read-only): </label>
+      <input type="file" name="load-diablo-exe" id="load-diablo-exe" accept="application/x-ms-dos-executable">
+      <input type="button" value="Load" id="upload-button">
+    </form>
+  </div>
+  <div class="loaded">
+    <p>Loaded!</p>
+    <p><a href="http://localhost:4666/quests">Quests</a></p>
+    <p><a href="http://localhost:4666/spells">Spells</a></p>
+    <p><a href="http://localhost:4666/shrines">Shrines</a></p>
+    <p><a href="http://localhost:4666/modifiers">Item Modifiers</a></p>
+    <p><a href="http://localhost:4666/uniques">Unique Items</a></p>
+    <p><a href="http://localhost:4666/characters">Characters</a></p>
+    <p><a href="http://localhost:4666/items">Base Items</a></p>
+    <p><a href="http://localhost:4666/monsters">Base Monsters</a></p>
+    <p><a href="http://localhost:4666/elites">Unique Monsters</a></p>
+    <p><a href="http://localhost:4666/binary/obtain" download="DiabloModded.exe">Obtain modded binary (.exe) file</a></p>
+    <p><a href="http://localhost:4666/control/shutdown">Shutdown server (will discard non-downloaded binary file!)</a></p>
+  </div>
+  <div id="scope"></div>
+  <script src="scripts/front-page.js" type="text/javascript"></script>
+</body>
+</html>

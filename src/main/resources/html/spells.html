@@ -1,0 +1,58 @@
+<!--
+/*
+ * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
+ *
+ * See README.txt for full contributor list.
+ *
+ * This code is tri-licensed, under the CC0, MIT and Apache 2.0 licenses (i.e. pick one of the three licenses).
+ *
+ * Careful attribution is strongly preferred, though not required under CC0.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open Diablo Editor</title>
+    <meta charset="UTF-8">
+    <script src="scripts/vue.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style/ode.css">
+</head>
+<body>
+<h1>Open Diablo Editor</h1>
+<p><a href="http://localhost:4666/">Back</a></p>
+<div id="scope">
+    <select class="selector" v-model="spells.spellSelected">
+        <option v-for="s in spells.spellList" :value="s">{{ s.nameAsSpell }} ({{ s.nameAsSkill }})</option>
+    </select>
+    <form>
+        <p><label>Spell Name</label><input type="text" :value="spells.spellSelected.nameAsSpell" readonly></p>
+        <p><label>Mana to cast + mana from reading</label><input type="number" v-model="spells.spellSelected.manaToCast"></p>
+        <p><label>Animation when casting</label><input type="number" v-model="spells.spellSelected.animationWhenCasting"></p>
+        <p><label>Pointer to name as spell</label><input type="number" :value="spells.spellSelected.pointerToNameAsSpell" readonly></p>
+        <p><label>Pointer to name as skill</label><input type="number" :value="spells.spellSelected.pointerToNameAsSkill" readonly></p>
+        <p><label>Skill Name</label><input type="text" :value="spells.spellSelected.nameAsSkill" readonly></p>
+        <p><label>Quality level of spell book</label><input type="text" v-model="spells.spellSelected.spellBookQuality"></p>
+        <p><label>Quality level of staff</label><input type="text" v-model="spells.spellSelected.staffQuality"></p>
+        <p><label>Spell active in town</label><input type="number" v-model="spells.spellSelected.spellActiveInTown"></p>
+        <p><label>Base required magic</label><input type="number" v-model="spells.spellSelected.baseRequiredMagic"></p>
+        <p><label>Casting sound</label><input type="number" v-model="spells.spellSelected.castingSound"></p>
+        <p><label>Spell effect 1</label><input type="number" v-model="spells.spellSelected.spellEffect1"></p>
+        <p><label>Spell effect 2</label><input type="number" v-model="spells.spellSelected.spellEffect2"></p>
+        <p><label>Spell effect 3</label><input type="number" v-model="spells.spellSelected.spellEffect3"></p>
+        <p><label>Mana step</label><input type="number" v-model="spells.spellSelected.manaStep"></p>
+        <p><label>Min casting cost</label><input type="number" v-model="spells.spellSelected.minCastingCost"></p>
+        <p><label>Zero</label><input type="number" :value="spells.spellSelected.byteThirtyEight" readonly></p>
+        <p><label>Zero</label><input type="number" :value="spells.spellSelected.byteThirtyNine" readonly></p>
+        <p><label>Min charges</label><input type="number" v-model="spells.spellSelected.minCharges"></p>
+        <p><label>Max charges</label><input type="number" v-model="spells.spellSelected.maxCharges"></p>
+        <p><label>Book cost</label><input type="number" v-model="spells.spellSelected.bookCost"></p>
+        <p><label>Staff cost multiplier</label><input type="number" v-model="spells.spellSelected.staffCostMultiplier"></p>
+    </form>
+</div>
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="button" value="Save!" id="save-button">
+</form>
+<script src="scripts/load.js" type="text/javascript"></script>
+<script src="scripts/save.js" type="text/javascript"></script>
+</body>
+</html>

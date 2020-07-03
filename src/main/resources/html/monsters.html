@@ -1,0 +1,89 @@
+<!--
+/*
+ * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
+ *
+ * See README.txt for full contributor list.
+ *
+ * This code is tri-licensed, under the CC0, MIT and Apache 2.0 licenses (i.e. pick one of the three licenses).
+ *
+ * Careful attribution is strongly preferred, though not required under CC0.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Open Diablo Editor</title>
+    <meta charset="UTF-8">
+    <script src="scripts/vue.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style/ode.css">
+</head>
+<body>
+<h1>Open Diablo Editor</h1>
+<p><a href="http://localhost:4666/">Back</a></p>
+<div id="scope">
+<select class="selector" v-model="baseMonsters.baseMonsterSelected">
+    <option v-for="m in baseMonsters.baseMonsterList" :value="m">{{ m.name }}</option>
+</select>
+<form>
+    <p><label>Monster name</label><input type="text" :value="baseMonsters.baseMonsterSelected.name" readonly></p>
+    <p><label>Enabled</label><input type="number" :value="baseMonsters.baseMonsterSelected.enabled"></p>
+    <p><label>Animation size</label><input type="number" :value="baseMonsters.baseMonsterSelected.animationSize"></p>
+    <p><label>Seeding size</label><input type="number" :value="baseMonsters.baseMonsterSelected.seedingSize"></p>
+    <p><label>Animation file pointer</label><input type="number" :value="baseMonsters.baseMonsterSelected.animationFilePointer"></p>
+    <p><label>Animation file name</label><input type="text" size="25" :value="baseMonsters.baseMonsterSelected.animationFileName"></p>
+    <p><label>Second attack</label><input type="number" :value="baseMonsters.baseMonsterSelected.secondAttack"></p>
+    <p><label>Sound pointer</label><input type="number" :value="baseMonsters.baseMonsterSelected.soundPointer"></p>
+    <p><label>Has second attack sound</label><input type="number" :value="baseMonsters.baseMonsterSelected.hasSecondAttackSound"></p>
+    <p><label>Uses TRN to mod colour</label><input type="number" :value="baseMonsters.baseMonsterSelected.usesTrnToModColor"></p>
+    <p><label>TRN pointer</label><input type="number" :value="baseMonsters.baseMonsterSelected.trnPointer"></p>
+    <p><label>Idle frameset</label><input type="number" :value="baseMonsters.baseMonsterSelected.idleFrameSet"></p>
+    <p><label>Walk frameset</label><input type="number" :value="baseMonsters.baseMonsterSelected.walkFrameSet"></p>
+    <p><label>Attack frameset</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackFrameSet"></p>
+    <p><label>Hit recovery frameset</label><input type="number" :value="baseMonsters.baseMonsterSelected.hitRecoveryFrameSet"></p>
+    <p><label>Death frameset</label><input type="number" :value="baseMonsters.baseMonsterSelected.deathFrameSet"></p>
+    <p><label>Second attack frameset</label><input type="number" :value="baseMonsters.baseMonsterSelected.secondAttackFrameSet"></p>
+    <p><label>Idle playback speed</label><input type="number" :value="baseMonsters.baseMonsterSelected.idlePlaybackSpeed"></p>
+    <p><label>Walk playback speed</label><input type="number" :value="baseMonsters.baseMonsterSelected.walkPlaybackSpeed"></p>
+    <p><label>Attack playback speed</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackPlaybackSpeed"></p>
+    <p><label>Hit recovery speed</label><input type="number" :value="baseMonsters.baseMonsterSelected.hitRecoverySpeed"></p>
+    <p><label>Death playback speed</label><input type="number" :value="baseMonsters.baseMonsterSelected.deathPlaybackSpeed"></p>
+    <p><label>Second attack speed</label><input type="number" :value="baseMonsters.baseMonsterSelected.secondAttackSpeed"></p>
+    <p><label>Name pointer</label><input type="number" :value="baseMonsters.baseMonsterSelected.namePointer" readonly></p>
+    <p><label>Min dungeon level</label><input type="number" :value="baseMonsters.baseMonsterSelected.minDungeonLevel"></p>
+    <p><label>Max dungeon level</label><input type="number" :value="baseMonsters.baseMonsterSelected.maxDungeonLevel"></p>
+    <p><label>Monster item level</label><input type="number" :value="baseMonsters.baseMonsterSelected.monsterItemLevel"></p>
+    <p><label>Min HPs</label><input type="number" :value="baseMonsters.baseMonsterSelected.minHitPoints"></p>
+    <p><label>Max HPs</label><input type="number" :value="baseMonsters.baseMonsterSelected.maxHitPoints"></p>
+    <p><label>Attack type (byte 1)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType1"></p>
+    <p><label>Attack type (byte 2)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType2"></p>
+    <p><label>Attack type (byte 3)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType3"></p>
+    <p><label>Attack type (byte 4)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType4"></p>
+    <p><label>Attack type (byte 5)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType5"></p>
+    <p><label>Monster intelligence</label><input type="number" :value="baseMonsters.baseMonsterSelected.monsterIntelligence"></p>
+    <p><label>Attack type (byte 7)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType7"></p>
+    <p><label>Attack type (byte 8)</label><input type="number" :value="baseMonsters.baseMonsterSelected.attackType8"></p>
+    <p><label>Monster sub-type</label><input type="number" :value="baseMonsters.baseMonsterSelected.subType"></p>
+    <p><label>Primary attack % hit</label><input type="number" :value="baseMonsters.baseMonsterSelected.priChanceToHit"></p>
+    <p><label>Primary to-hit frame</label><input type="number" :value="baseMonsters.baseMonsterSelected.priToHitFrame"></p>
+    <p><label>Primary min attack damage</label><input type="number" :value="baseMonsters.baseMonsterSelected.priMinAttackDamage"></p>
+    <p><label>Primary max attack damage</label><input type="number" :value="baseMonsters.baseMonsterSelected.priMaxAttackDamage"></p>
+    <p><label>Sec. attack % hit</label><input type="number" :value="baseMonsters.baseMonsterSelected.secToHitChance"></p>
+    <p><label>Sec. to-hit frame</label><input type="number" :value="baseMonsters.baseMonsterSelected.secToHitFrame"></p>
+    <p><label>Secondary min attack damage</label><input type="number" :value="baseMonsters.baseMonsterSelected.secMinAttackDamage"></p>
+    <p><label>Secondary max attack damage</label><input type="number" :value="baseMonsters.baseMonsterSelected.secMaxAttackDamage"></p>
+    <p><label>Monster AC</label><input type="number" :value="baseMonsters.baseMonsterSelected.monsterAc"></p>
+    <p><label>Monster type</label><input type="number" :value="baseMonsters.baseMonsterSelected.monsterType"></p>
+    <p><label>Resistances (norm. and nightmare)</label><input type="number" :value="baseMonsters.baseMonsterSelected.resistancesNormAndNightmare"></p>
+    <p><label>Resistances (hell mode)</label><input type="number" :value="baseMonsters.baseMonsterSelected.resistancesHell"></p>
+    <p><label>Item drop specials</label><input type="number" :value="baseMonsters.baseMonsterSelected.itemDropSpecials"></p>
+    <p><label>Monster selection outline</label><input type="number" :value="baseMonsters.baseMonsterSelected.monsterSelectionOutline"></p>
+    <p><label>XP</label><input type="number" :value="baseMonsters.baseMonsterSelected.experiencePoints"></p>
+</form>
+</div>
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="button" value="Save!" id="save-button">
+</form>
+<script src="scripts/load.js" type="text/javascript"></script>
+<script src="scripts/save.js" type="text/javascript"></script>
+</body>
+</html>

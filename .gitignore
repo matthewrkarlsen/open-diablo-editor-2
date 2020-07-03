@@ -1,0 +1,11 @@
+binaries/*
+*.exe
+OpenDiabloEditor.iml
+.gradle
+.idea
+.settings
+.classpath
+.project
+build
+releases
+target
