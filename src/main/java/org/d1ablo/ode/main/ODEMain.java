@@ -10,7 +10,7 @@ import javax.swing.*;
 /*
  * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
  *
- * See README.txt for full contributor list.
+ * See README.md for full contributor list.
  *
  * This code is tri-licensed, under the CC0, MIT and Apache 2.0 licenses (i.e. pick one of the three licenses).
  *

@@ -1,7 +1,7 @@
 /*
  * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
  *
- * See README.txt for full contributor list.
+ * See README.md for full contributor list.
  *
  * This file is EXCLUDED from the tri-license that the majority of the project files are released under.
  *
