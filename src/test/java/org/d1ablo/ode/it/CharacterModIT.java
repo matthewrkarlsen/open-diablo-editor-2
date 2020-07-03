@@ -25,7 +25,7 @@ public class CharacterModIT {
 
     @Before
     public void beforeTest() {
-        File diabloTestFile = new File("DiabloTest.exe");
+        File diabloTestFile = new File("binaries/DiabloTest.exe");
         if(diabloTestFile.exists()) {
             boolean deleted = diabloTestFile.delete();
             if(!deleted) {
@@ -36,7 +36,7 @@ public class CharacterModIT {
 
     @After
     public void afterTest() {
-        File diabloTestFile = new File("DiabloTest.exe");
+        File diabloTestFile = new File("binaries/DiabloTest.exe");
         boolean deleted = diabloTestFile.delete();
         if(!deleted) {
             throw new IllegalStateException("Could not delete DiabloTest.exe during clean up.");
@@ -328,7 +328,7 @@ public class CharacterModIT {
                 new UniqueMonsterStore(new ArrayList<>(), uniqueMonsterFactory, uniqueMonsterFactory.getDummyUniqueMonster())
         );
 
-        File newFile = initiateFileCopy("Diablo.exe", "DiabloTest.exe");
+        File newFile = initiateFileCopy("binaries/Diablo.exe", "binaries/DiabloTest.exe");
         RandomAccessFile randomAccessFile;
         try {
             randomAccessFile = new RandomAccessFile(newFile.getPath(), "rw");
@@ -340,7 +340,7 @@ public class CharacterModIT {
 
         statModOp.executeStatMod(completeStore);
         List<BinDiff> binDiffList =
-                binDiffTool.reportBinDiffs("Diablo.exe", "DiabloTest.exe");
+                binDiffTool.reportBinDiffs("binaries/Diablo.exe", "binaries/DiabloTest.exe");
         expected.sort(Comparator.comparingLong(BinDiff::getIndex));
         binDiffList.sort(Comparator.comparingLong(BinDiff::getIndex));
         for(int i = 0; i < expected.size(); i++) {
