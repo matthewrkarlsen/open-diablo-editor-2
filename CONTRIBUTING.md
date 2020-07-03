@@ -1,10 +1,8 @@
-=============
-Contributions
-=============
+# Contributing
 
 Contributions are welcome, providing they are small and focused (and thus can be code reviewed relatively easily).
 
-Please remember to update the contributors section in the README.txt with your name as part of your first commit to
+Please remember to update the contributors section in the README.md with your name as part of your first commit to
 the project.
 
 Any contributions submitted will be tri-licensed, under the supplied CC0, MIT and Apache 2.0 licenses.

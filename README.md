@@ -1,10 +1,22 @@
-================
-Acknowledgements
-================
+# Open Diablo Editor 2 #
 
---------------
-Libraries Used
---------------
+## Contributors ##
+
+- Matthew R. Karlsen
+- Robin Eklind ('mewmew')
+- 'ChaosMarc'
+
+## Contributing ##
+
+Please see CONTRIBUTING.md
+
+## License ##
+
+Please see LICENSE.md
+
+## Acknowledgements ##
+
+### Libraries Used ###
 
 This project uses the following direct dependencies/libraries:
 
@@ -19,9 +31,7 @@ This project uses the following direct dependencies/libraries:
 
 Please consult the pom.xml file for details on the exact dependencies and versions used.
 
-----------------------
-Other Acknowledgements
-----------------------
+### Other Acknowledgements ###
 
 The now-defunct mod workshop located at http://www.thedark5.com/info/mod.html was extremely valuable in the
 construction of this software.
@@ -30,10 +40,7 @@ The workshop was originally created by Charlie with assistance from Jarulf.
 
 A big thanks to Zamal & Zenda for continuing to host it while they could.
 
-
---------------------------
-Acknoledgement Ammendments
---------------------------
+### Acknowledgement Amendments ###
 
 The project takes acknowledgements very seriously. Should you believe that any acknowledgements
-are awry, please get in touch as soon as possible via the email address in the README.txt file.
+are awry, please raise an issue as soon as possible.
