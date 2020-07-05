@@ -2,6 +2,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.d1ablo</groupId>
     <artifactId>open-diablo-editor</artifactId>
+
+    <!-- NB: when you change version, be sure to update Dockerfile too.
+            FIXME: remove need to change Dockerfile as well. -->
     <version>2.0.0b1</version>
 
     <dependencies>
@@ -109,6 +112,11 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
             </plugin>
         </plugins>
     </build>
