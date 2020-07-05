@@ -39,7 +39,7 @@ function loadData() {
         var elementToReveal = document.getElementById("scope");
         elementToReveal.style.display = "block";
     });
-    xhr.open("GET", "http://localhost:4666/data/obtain");
+    xhr.open("GET", "/data/obtain");
     console.log("Loading data (2)");
     xhr.send();
 }

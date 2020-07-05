@@ -19,7 +19,7 @@ function saveData() {
             saveButton.disabled = false;
             saveButton.value = "Save!";
         });
-        xhr.open("POST", "http://localhost:4666/data/upload");
+        xhr.open("POST", "/data/upload");
         console.log("Saving data (2)");
         xhr.send(JSON.stringify(vm.$data));
     });
