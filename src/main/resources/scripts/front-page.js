@@ -18,7 +18,7 @@ window.onload = function() {
             setDocumentToUnloadedState();
         }
     });
-    xhr.open("GET", "http://localhost:4666/loaded");
+    xhr.open("GET", "/loaded");
     xhr.send();
 };
 
@@ -50,7 +50,7 @@ function uploadClick() {
     xhr.addEventListener("load", function() {
         setDocumentToLoadedState();
     });
-    xhr.open("POST", "http://localhost:4666/binary/load");
+    xhr.open("POST", "/binary/load");
     console.log("Sending file...");
     xhr.send(form);
 }
