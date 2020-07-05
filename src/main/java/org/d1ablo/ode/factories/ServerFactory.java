@@ -18,6 +18,7 @@ import io.undertow.server.handlers.BlockingHandler;
 import io.undertow.server.handlers.GracefulShutdownHandler;
 import io.undertow.server.handlers.PathHandler;
 import org.d1ablo.ode.bintool.BinEditTool;
+import org.d1ablo.ode.enums.Host;
 import org.d1ablo.ode.server.ODEServer;
 import org.d1ablo.ode.server.ResourceProvider;
 import org.d1ablo.ode.server.handler.*;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 
 public class ServerFactory {
 
-    public ODEServer constructServer() {
+    public ODEServer constructServer(Host host) {
         System.out.println("Constructing ODE server.");
 
         BinEditTool binEditTool = new BinEditTool();
@@ -92,7 +93,7 @@ public class ServerFactory {
                         .addExactPath("/control/shutdown", new ShutdownHandler(odeServer, resourceProvider))
         );
         Undertow undertow = Undertow.builder()
-                .addHttpListener(4666, "localhost", mainRootHandler)
+                .addHttpListener(4666, host.value(), mainRootHandler)
                 .build();
         odeServer.setUndertow(undertow); //FIXME -- is there a better way to do this?
         return odeServer;

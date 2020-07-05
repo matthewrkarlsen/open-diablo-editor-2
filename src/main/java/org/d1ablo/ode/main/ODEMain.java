@@ -1,12 +1,3 @@
-package org.d1ablo.ode.main;
-
-import org.d1ablo.ode.factories.DesktopFactory;
-import org.d1ablo.ode.factories.ServerFactory;
-import org.d1ablo.ode.gui.DesktopODE;
-import org.d1ablo.ode.server.ODEServer;
-
-import javax.swing.*;
-
 /*
  * This code is from 'Open Diablo Editor' version 2.x, authored by Matthew R. Karlsen and other contributors.
  *
@@ -16,6 +7,15 @@ import javax.swing.*;
  *
  * Careful attribution is strongly preferred, though not required under CC0.
  */
+package org.d1ablo.ode.main;
+
+import org.d1ablo.ode.enums.Host;
+import org.d1ablo.ode.factories.DesktopFactory;
+import org.d1ablo.ode.factories.ServerFactory;
+import org.d1ablo.ode.gui.DesktopODE;
+import org.d1ablo.ode.server.ODEServer;
+
+import javax.swing.*;
 
 /**
  * The core/main class of the program.
@@ -27,20 +27,23 @@ public class ODEMain {
         if(args.length > 0) {
             runWithArg(args[0]);
         } else {
-            runServer();
+            runServer(Host.LOCALHOST);
         }
     }
 
-    private static void runServer() {
-        System.out.println("No command line flags added, running ODE server (default action).");
+    private static void runServer(Host host) {
+        boolean permitExternalAccess = (host == Host.ZERO_ZERO_ZERO_ZERO);
+        System.out.println("Running ODE server. External access permitted (dangerous)? " + permitExternalAccess);
         System.out.println("To re-run the program with the legacy user interface, use the " +
                 "--legacy-graphical-ui option.");
-        ODEServer odeServer = new ServerFactory().constructServer();
+        ODEServer odeServer = new ServerFactory().constructServer(host);
         odeServer.start();
     }
 
     private static void runWithArg(String firstArgument) {
         switch (firstArgument) {
+            case "--permit-external-access":
+                runServer(Host.ZERO_ZERO_ZERO_ZERO);
             case "--legacy-graphical-ui":
                 System.out.println("Loading legacy graphical user interface.");
                 DesktopFactory desktopFactory = new DesktopFactory();
