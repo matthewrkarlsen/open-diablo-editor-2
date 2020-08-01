@@ -119,7 +119,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>org.d1ablo.ode.ProgrammaticODE</mainClass>
+                            <mainClass>org.d1ablo.ode.main.ODEMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
