@@ -1,6 +1,6 @@
 binaries/*
 *.exe
-OpenDiabloEditor.iml
+*.iml
 .gradle
 .idea
 .settings
