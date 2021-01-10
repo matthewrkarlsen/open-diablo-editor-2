@@ -12,7 +12,7 @@ by GOG, only the original exe (as also provided by GOG).
 - Place the jar file in the desired directory (should be empty apart from the jar). `C:\Program Files\ODE2` or similar is fine on Windows.
 - Run the jar file with the command `java -jar open-diablo-editor-2.0.0b1.jar` (updating the version as appropriate).
   Alternatively, your operating system may simply let you double-click on the jar file to run it.
-- navigate to [localhost:4666](http://localhost:4666/) in a recent version of Chrome or Firefox.
+- navigate to [localhost:43131](http://localhost:43131/) in a recent version of Chrome or Firefox.
 - Enjoy (hopefully).
 - Send comments or raise issues as required.
 - Be sure to shut down the editor using the final link on the editor page in your browser, or by pressing Ctrl+C in the

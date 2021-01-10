@@ -93,7 +93,7 @@ public class ServerFactory {
                         .addExactPath("/control/shutdown", new ShutdownHandler(odeServer, resourceProvider))
         );
         Undertow undertow = Undertow.builder()
-                .addHttpListener(4666, host.value(), mainRootHandler)
+                .addHttpListener(43131, host.value(), mainRootHandler)
                 .build();
         odeServer.setUndertow(undertow); //FIXME -- is there a better way to do this?
         return odeServer;

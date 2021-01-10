@@ -39,7 +39,7 @@ public class ODEServer {
         logger.info("Starting ODE server.");
         undertow.start();
         System.out.println("ODE server started.");
-        System.out.println("Please navigate to http://localhost:4666/ in a web browser.");
+        System.out.println("Please navigate to http://localhost:43131/ in a web browser.");
         System.out.println("You need JavaScript enabled in your browser to be able to use the editor.");
     }
 
