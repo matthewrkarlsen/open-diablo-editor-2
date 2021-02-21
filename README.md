@@ -28,6 +28,11 @@ by GOG, only the original exe (as also provided by GOG).
   Please do **NOT** specify your original `Diablo.exe` or you will save over the existing file
   and lose your 'reset' point.
   It is recommended to back up your original `Diablo.exe` file in case you accidentally do this.
+
+## Mod Workshop Mirror ##
+
+For an explanation of the various modding options within the editor, please refer to the
+[Mod Workshop Mirror](https://matthewrkarlsen.github.io/d1-mod-workshop/).
     
 ## Building via Maven ##
 
