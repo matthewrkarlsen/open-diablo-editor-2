@@ -33,7 +33,12 @@ by GOG, only the original exe (as also provided by GOG).
 
 For an explanation of the various modding options within the editor, please refer to the
 [Mod Workshop Mirror](https://matthewrkarlsen.github.io/d1-mod-workshop/).
-    
+
+## Additional Test Requirements ##
+
+To run the JUnit tests, a copy of the `Diablo.exe` file is required (this is not supplied).
+This exe file should be located under `./binaries/Diablo.exe` (relative to the main project folder).
+
 ## Building via Maven ##
 
 - Install a Java 11 JDK from [the AdoptOpenJDK site](https://adoptopenjdk.net/) or your provider of choice.
