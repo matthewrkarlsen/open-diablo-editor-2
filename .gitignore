@@ -1,4 +1,6 @@
 binaries/*
+binaries/Diablo.exe
+binaries/DiabloTest.exe
 *.exe
 *.iml
 .gradle
